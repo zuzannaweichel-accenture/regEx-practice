@@ -7,13 +7,13 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class RegularExpressionPracticeTest {
+public class CreditCardValidatorTest {
 
-    private RegularExpressionPractice regEx;
+    private CreditCardValidator regEx;
 
     @Before
     public void setup(){
-        regEx = new RegularExpressionPractice();
+        regEx = new CreditCardValidator();
     }
 
     @Test

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-public class RegularExpressionPractice {
+public class CreditCardValidator {
 
     public String validateCreditCard(String creditCard) {
         String number = removeWhiteSpacesAndDashes(creditCard);
