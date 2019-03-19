@@ -3,22 +3,34 @@
  */
 package regEx.practice;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class RegularExpressionPractice {
 
     public String validateCreditCard(String creditCard) {
         String number = removeWhiteSpacesAndDashes(creditCard);
-        String cardProvider = "";
-        if (Pattern.matches("^4[0-9]{12}(?:[0-9]{3})?$",number)) {
-            cardProvider = "VISA";
-        }else if (Pattern.matches("^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$", number)){
-            cardProvider = "MasterCard";
-        }else{
-            cardProvider = "Not a valid Card Number";
+        String visaRegEx = "^4[0-9]{12}(?:[0-9]{3})?$";
+        String masterCardRegEx = "^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$";
+        String americanExpressRegEx = "^3[47][0-9]{13}$";
+        String discoverRegEx = "^6(?:011|5[0-9]{2})[0-9]{12}$";
+        String cardProvider = "Not a valid Card Number";
+
+        Map<String,String> providers = new HashMap<>();
+        providers.put(visaRegEx,"VISA");
+        providers.put(masterCardRegEx,"MasterCard");
+        providers.put(americanExpressRegEx,"AmericanExpress");
+        providers.put(discoverRegEx,"Discover");
+
+        for (String p :providers.keySet()) {
+            if (Pattern.matches(p,number)){
+                cardProvider = providers.get(p);
+            }
         }
         return cardProvider;
     }
+
     private String removeWhiteSpacesAndDashes(String number){
         return number.replaceAll("[ -/]","");
     }

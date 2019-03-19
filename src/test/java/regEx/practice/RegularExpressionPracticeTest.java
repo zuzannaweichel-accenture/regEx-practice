@@ -32,4 +32,22 @@ public class RegularExpressionPracticeTest {
         assertEquals("MasterCard", regEx.validateCreditCard(mc));
         assertEquals("Not a valid Card Number", regEx.validateCreditCard(fake));
     }
+
+    @Test
+    public void is_ValidAmericanExpress(){
+        String aEx = "373 8989 0900 7897";
+        String fake = "3123 2222 0000 53";
+
+        assertEquals("AmericanExpress", regEx.validateCreditCard(aEx));
+        assertEquals("Not a valid Card Number", regEx.validateCreditCard(fake));
+    }
+
+    @Test
+    public void is_ValidDiscover(){
+        String dsc = "65 8989 0900 7897 99";
+        String fake = "3123 2222 0000 53";
+
+        assertEquals("Discover", regEx.validateCreditCard(dsc));
+        assertEquals("Not a valid Card Number", regEx.validateCreditCard(fake));
+    }
 }
