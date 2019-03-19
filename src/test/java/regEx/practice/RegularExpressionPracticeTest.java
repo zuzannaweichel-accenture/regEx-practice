@@ -24,6 +24,7 @@ public class RegularExpressionPracticeTest {
         assertEquals("VISA",regEx.validateCreditCard(visa));
         assertEquals("Not a valid Card Number", regEx.validateCreditCard(fake));
     }
+
     @Test
     public void is_ValidMasterCard(){
         String mc = "2223 8989 0900 7897";
@@ -48,6 +49,17 @@ public class RegularExpressionPracticeTest {
         String fake = "3123 2222 0000 53";
 
         assertEquals("Discover", regEx.validateCreditCard(dsc));
+        assertEquals("Not a valid Card Number", regEx.validateCreditCard(fake));
+    }
+
+    @Test
+    public void is_ValidJCB(){
+        String jcb = "2131 8989 0900 789";
+        String jcb2 = "35 6785 8765 8976 67";
+        String fake = "3123 2222 0000 53";
+
+        assertEquals("JCB", regEx.validateCreditCard(jcb));
+        assertEquals("JCB", regEx.validateCreditCard(jcb2));
         assertEquals("Not a valid Card Number", regEx.validateCreditCard(fake));
     }
 }

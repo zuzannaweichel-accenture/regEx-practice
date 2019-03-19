@@ -15,6 +15,7 @@ public class RegularExpressionPractice {
         String masterCardRegEx = "^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$";
         String americanExpressRegEx = "^3[47][0-9]{13}$";
         String discoverRegEx = "^6(?:011|5[0-9]{2})[0-9]{12}$";
+        String jcbRegEg = "^(2131|1800|35[0-9]{3})[0-9]{11}$";
         String cardProvider = "Not a valid Card Number";
 
         Map<String,String> providers = new HashMap<>();
@@ -22,6 +23,7 @@ public class RegularExpressionPractice {
         providers.put(masterCardRegEx,"MasterCard");
         providers.put(americanExpressRegEx,"AmericanExpress");
         providers.put(discoverRegEx,"Discover");
+        providers.put(jcbRegEg,"JCB");
 
         for (String p :providers.keySet()) {
             if (Pattern.matches(p,number)){
