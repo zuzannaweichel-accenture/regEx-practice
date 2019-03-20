@@ -14,4 +14,8 @@
     * 2065.12.24
 ## Validating Phone Number
 * valid phone number
-    * +1 
+    * (541) 754-3010	Domestic
+    * \+1-541-754-3010	International
+    * \+44 20 7283 7907
+    * 1-541-754-3010	
+ 
