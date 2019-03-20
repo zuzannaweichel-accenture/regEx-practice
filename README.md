@@ -6,5 +6,12 @@
 * Discover card numbers begin with 6011 or 65. All have 16 digits.
 * JCB cards beginning with 2131 or 1800 have 15 digits. JCB cards beginning with 35 have 16 digits.
 ## Validating E-mail Address
+* valid email address follows the patter  name@some.domain
 ## Validating Date
+* valid date examples:
+    * 1986-07-25
+    * 2012/10/03
+    * 2065.12.24
 ## Validating Phone Number
+* valid phone number
+    * +1 
